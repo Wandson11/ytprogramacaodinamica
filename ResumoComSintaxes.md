@@ -38,3 +38,17 @@ pd.qcut(dataframe.coluna, q=4 (4 é so um exemplo, pode ser qualquer número)),s
 dica07: bar_chart_race: para fazer download pip install bar_chart_race.
 corrida dos gráficos de barra em tempo real.
 É indicado que o index sejam as datas, e as colunas, por exemplo, estados, cidades, paises.
+
+dica08: para construir um gráfico mais interativo via pd e plotly
+o material, será carregado pela sintaxe: pd.options.plotting.backend='plotly'
+expressoa do gráfico. dataframe.grafico.value_counts().sort_index().plot(kind='bar')
+Não precisa citar o tamanho do gráfico com fontsize e, nao precisa do ";" depois do parênteses.
+
+dica09: upar um arquivo diramente do winrar sem descompactar.
+Inicialmente, é necessário importar uma biblioteca de nome "zipfile".
+feita a importação, o passo seguinte é o de abrir o winrar e verificar os arquivos ali dentro, para isso: with zipfile.ZipFile('caminho do arquivo carregado no colab') as z:
+print(*z.namelist(), sep='\n').
+analisada a lista de arquivo, basta verificar quais dos arquivos será upado com df, nessa etapa o procedimento a ser feito é o seguinte:
+with zipfile.ZipFile('') as z:
+  with z.open('nome do arquivo dentro do winrar') as f:
+    variavel = pd.read_csv(f)
