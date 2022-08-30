@@ -25,3 +25,16 @@ dataframe.style.background_gradient(cmap='viridis') ou cmpa='Reds'. Paleta de co
 Para pintar um dataframe inteiro, mesmo que sem o efeito gradiente, a expressão é: dataframe/variavel. style.set_properties(**{'background-color': 'black', 'color': 'lawngreen', 'border-color': 'white'}), essas cores são editáveis
 E, por último, remetendo ainda a style, existe a função para quando o mouse passar por cima de uma linha, essa linha ser destacada:
 variável.set_table_style([{'selector': 'tr:hover', 'props': [('background-clor', 'red'), ('color', 'white')]}])
+
+dica06 - variável categórica e transformação.
+Logo no "pd.read", é possivel informar ao interpretador se alguma coluna é categórica pela sintaxe dtype = {'colunacategorica':'category'}.
+Uma vez feito isso, de indicar coluna categórica, uma forma de transformar categórica em númerica, é pela expressão: cat.codes, assim, cada grupo, receberá um número.
+dataframe['coluna a ser transformada'].cat.codes
+Se quiser transformar uma coluna float em categória, a sintaxe a ser usada é "pd.cut", onde será indicado a divisão grupo a grupo:
+pd.cut(dataframe.coluna, bins=[x, 2x, 3x, 4x], labels=[um nome para cada grupo, com aspas simples e separadas por vírgula])
+existe ainda o qcut, que faz de forma automatica essa parte do bins, informando apenas em quantos grupo deseja a separação, que seja feita de forma distribuida
+pd.qcut(dataframe.coluna, q=4 (4 é so um exemplo, pode ser qualquer número)),se não colocar labels, funciona também
+
+dica07: bar_chart_race: para fazer download pip install bar_chart_race.
+corrida dos gráficos de barra em tempo real.
+É indicado que o index sejam as datas, e as colunas, por exemplo, estados, cidades, paises.
