@@ -56,3 +56,6 @@ with zipfile.ZipFile('') as z:
 dica11: uso de geopandas as gpd, para elaborar mapas
 o procedimento inicial é igual ao pandas: variavel= gpd.read_file(); variavel.head().
 variavel.plot() - primeiro gráfico
+
+dica13: para saber se um site permite a raspagem de dados, basta ao final inserir "/robots.txt".
+https://pt.wikipedia.org/robots.txt
