@@ -30,7 +30,7 @@ dica06 - variável categórica e transformação.
 Logo no "pd.read", é possivel informar ao interpretador se alguma coluna é categórica pela sintaxe dtype = {'colunacategorica':'category'}.
 Uma vez feito isso, de indicar coluna categórica, uma forma de transformar categórica em númerica, é pela expressão: cat.codes, assim, cada grupo, receberá um número.
 dataframe['coluna a ser transformada'].cat.codes
-Se quiser transformar uma coluna float em categória, a sintaxe a ser usada é "pd.cut", onde será indicado a divisão grupo a grupo:
+Se quiser transformar uma coluna float em categórica, a sintaxe a ser usada é "pd.cut", onde será indicado a divisão grupo a grupo:
 pd.cut(dataframe.coluna, bins=[x, 2x, 3x, 4x], labels=[um nome para cada grupo, com aspas simples e separadas por vírgula])
 existe ainda o qcut, que faz de forma automatica essa parte do bins, informando apenas em quantos grupo deseja a separação, que seja feita de forma distribuida
 pd.qcut(dataframe.coluna, q=4 (4 é so um exemplo, pode ser qualquer número)),se não colocar labels, funciona também
@@ -52,3 +52,7 @@ analisada a lista de arquivo, basta verificar quais dos arquivos será upado com
 with zipfile.ZipFile('') as z:
   with z.open('nome do arquivo dentro do winrar') as f:
     variavel = pd.read_csv(f)
+    
+dica11: uso de geopandas as gpd, para elaborar mapas
+o procedimento inicial é igual ao pandas: variavel= gpd.read_file(); variavel.head().
+variavel.plot() - primeiro gráfico
