@@ -59,3 +59,6 @@ variavel.plot() - primeiro gráfico
 
 dica13: para saber se um site permite a raspagem de dados, basta ao final inserir "/robots.txt".
 https://pt.wikipedia.org/robots.txt
+
+dica13: df.select_dtypes('int'), entre aspas pode ser float, bool, str
+no caso, serve para filtrar colunas com um determinado tipo de entrada, no exemplo acima, do tipo "int"
